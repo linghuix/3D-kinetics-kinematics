@@ -11,7 +11,7 @@ function [] = test()
     globalSys.z = [0 0 1];
     %% get angle
     joint_angle = get_joint_angle();
-%     plot_joint_angle(joint_angle, get_toeoff_percentage(262,316,351), get_toeoff_percentage(218,270,308));
+    plot_joint_angle(joint_angle, get_toeoff_percentage(262,316,351), get_toeoff_percentage(218,270,308));
 
     %% get omega / angular velocity
     joints = {'Lankle', 'Lknee', 'Lhip', 'Rankle', 'Rknee', 'Rhip'};
@@ -475,11 +475,11 @@ function [] = get_coordinates()
 
     % bone center of mass
     LTO = (LTOO+LTIO)./2;       % foot
-    LTI = 0.567*LFEO+0.433*LTIO;
-    LFE = 0.433*LFEO+0.567*LFEP;
+    LTI = 0.433*LFEO+0.567*LTIO;
+    LFE = 0.567*LFEO+0.433*LFEP;
     RTO = (RTOO+RTIO)./2;
-    RTI = 0.567*RFEO+0.433*RTIO;
-    RFE = 0.433*RFEO+0.567*RFEP;
+    RTI = 0.433*RFEO+0.567*RTIO;
+    RFE = 0.567*RFEO+0.433*RFEP;
 
     variable_names = {'LTO', 'LTI', 'LFE', 'RTO', 'RTI', 'RFE'};
     % Save the specified variables to a .mat file
